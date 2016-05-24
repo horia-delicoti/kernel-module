@@ -17,18 +17,20 @@
  *
  *****************************************************************************/
 
+#include <linux/init.h>
 #include <linux/module.h>
-#include <linux/kernel.h>
+MODULE_LICENSE("GPL");
 
-int init_module(void)
+int hello_init(void)
 {
-	printk(KERN_INFO "Hello World!\n");
+	printk(KERN_ALERT "Hello World!\n");
 	return 0;
 }
 
-void cleanup_module(void)
+void hello_exit(void)
 {
-	printk(KERN_INFO "Goodbye Cruel World!\n");
+	printk(KERN_ALERT "Goodbye Cruel World!\n");
 }
 
-MODULE_LICENSE("GPL");
+module_init(hello_init);
+module_exit(hello_exit);
