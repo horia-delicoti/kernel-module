@@ -7,12 +7,14 @@
 #include <linux/kernel.h>
 #include <linux/slab.h> 
 
+#define BUFFER_SIZE_2MB 2.097.152
+
 MODULE_LICENSE("GPL");
 
 static int Major;
 char *buff;
 
-buff = kzalloc(2.097.152, GFP_ATOMIC);
+buff = kzalloc(BUFFER_SIZE_2MB, GFP_ATOMIC);
 if (!buff) {
 	printk(KERN_IFNO "Buffer not allocated.");
 }
