@@ -7,7 +7,7 @@
 #include <linux/kernel.h>
 #include <linux/slab.h> 
 
-#define BUFFER_SIZE_2MB 2.097.152
+#define BUFFER_SIZE_2MB 2*1024*1024
 
 MODULE_LICENSE("GPL");
 
